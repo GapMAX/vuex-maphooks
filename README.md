@@ -17,7 +17,7 @@
 ## examples
 
 ```
-// 带命名空间
+// use namespace
 const {
   rename
 } = mapStateToComputed("a/", {
@@ -30,7 +30,7 @@ const {
   name
 } = mapStateToComputed("a/", ["name"]);
 
-// 不带命名空间
+// no namespace
 
 const {
   reCount
