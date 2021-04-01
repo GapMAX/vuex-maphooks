@@ -1,0 +1,33 @@
+{
+  "name": "vuex-maphooks",
+  "version": "1.0.0",
+  "description": "Map hooks for vue3&vuex4",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "vue3",
+    "vuex",
+    "vuex4",
+    "hooks",
+    "map hooks",
+    "mapState"
+  ],
+  "author": "Mugen",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.2.3",
+    "vuex": "^4.0.0",
+    "vue": "^3.0.2"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "peerDependencies": {
+    "vuex": "^4.0.0",
+    "vue": "^3.0.2"
+  }
+}
