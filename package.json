@@ -18,8 +18,8 @@
   "license": "ISC",
   "devDependencies": {
     "typescript": "^4.2.3",
-    "vuex": "^4.0.0",
-    "vue": "^3.0.2"
+    "vue": "^3.0.2",
+    "vuex": "^4.0.0"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
     "README.md"
   ],
   "peerDependencies": {
-    "vuex": "^4.0.0",
-    "vue": "^3.0.2"
+    "vue": "^3.0.2",
+    "vuex": "^4.0.0"
   }
 }

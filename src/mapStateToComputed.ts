@@ -12,7 +12,7 @@ import {
 
 type ExcludeType = string | string[];
 
-function mapStateToComputed<T extends object>(param1 : string, param2? : Exclude<T, ExcludeType>) : MapObjToComputedReturnType<T>;
+function mapStateToComputed<T extends object>(param1 : string, param? : Exclude<T, ExcludeType>) : MapObjToComputedReturnType<T>;
 function mapStateToComputed<T extends object>(param1 : Exclude<T, ExcludeType>) : MapObjToComputedReturnType<T>;
 function mapStateToComputed(param1 : string, param? : string[]) : {[key : string] : ComputedRef<any>};
 function mapStateToComputed(param1 : string[]) : {[key : string] : ComputedRef<any>};
