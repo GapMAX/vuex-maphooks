@@ -31,7 +31,8 @@ const mapArrayToComputed = <T extends object>(options : ComputedOptions<T>) => (
   } = options;
   keys.forEach((key) => {
     const newKey = keyWithNamespace(key, namespace);
-    mapState[key] = computed(() => options.storeProp[newKey as keyof T])
+    const keyArray = newKey.split('/').filter(v => v);
+    mapState[key] = computed(() => ganValueWithArrayKeys(options.storeProp, keyArray));
   })
   return mapState;
 }
@@ -69,7 +70,7 @@ export interface MapMethodOptions {
 }
 
 export type MapArrToMethodReturnType<O extends string, M> = {
-  [key in O] : (payload : any, options? : MethodOptions<M>) => M extends Dispatch ? Promise<any> : void
+  [key in O] : (payload? : any, options? : MethodOptions<M>) => M extends Dispatch ? Promise<any> : void
 }
 
 const mapArrayToMethods = (options : MapMethodOptions) => <K extends string>(keys : K[]) => {
@@ -79,13 +80,13 @@ const mapArrayToMethods = (options : MapMethodOptions) => <K extends string>(key
   } = options;
   keys.forEach((key) => {
     const newKey = keyWithNamespace(key, namespace);
-    mapMethod[key] = (payload : any, params? : MethodOptions<MapMethodOptions["method"]>) => options.method(newKey, payload, params)
+    mapMethod[key] = (payload? : any, params? : MethodOptions<MapMethodOptions["method"]>) => options.method(newKey, payload, params)
   })
   return mapMethod;
 }
 
 export type MapObjToMethodReturnType<T, K> = {
-  [key in keyof T] : (payload : any, options? : MethodOptions<K>) => K extends Dispatch ? Promise<any> : void
+  [key in keyof T] : (payload? : any, options? : MethodOptions<K>) => K extends Dispatch ? Promise<any> : void
 }
 
 export type MethodOptions<T> =  T extends Dispatch ? DispatchOptions : CommitOptions;
@@ -102,7 +103,7 @@ const mapObjToMethods = (options : MapMethodOptions) => (obj : {
   keys.forEach((key) => {
     const value = obj[key];
     const newValue = keyWithNamespace(value, namespace);
-    mapMethods[key] = (payload : any, param? : MethodOptions<MethodType>) => options.method(value, payload, param);
+    mapMethods[key] = (payload? : any, param? : MethodOptions<MethodType>) => options.method(value, payload, param);
   })
   return mapMethods;
 }

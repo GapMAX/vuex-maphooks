@@ -1,5 +1,8 @@
+import { useStore as sourceUseStore } from "vuex";
+
 const keyWithNamespace = (key : string, ns : string) => {
-  return ns ? ns.endsWith('/') ? ns + key : ns + '/' + key : key;
+  const result = ns ? ns.endsWith('/') ? ns + key : ns + '/' + key : key;
+  return result.split('/').filter(v => v).join('/');
 }
 
 export type GanValueWithArrayKeysType = (value : {
@@ -15,4 +18,15 @@ const ganValueWithArrayKeys : GanValueWithArrayKeysType = (value, keys) => {
 export {
   keyWithNamespace,
   ganValueWithArrayKeys
+}
+
+export const keyOperation = {
+  key : void 0,
+  register(key : any){
+    this.key = key;
+  }
+}
+
+export const useStore = () => {
+  return sourceUseStore(keyOperation.key);
 }

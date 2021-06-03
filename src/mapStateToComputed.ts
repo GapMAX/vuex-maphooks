@@ -1,9 +1,7 @@
 import {
   ComputedRef
 } from "vue";
-import {
-  useStore
-} from "vuex";
+import { useStore } from "./utils";
 import {
   mapArrayToComputed,
   mapObjToComputed,

@@ -1,10 +1,7 @@
 import {
-  ComputedRef
-} from "vue";
-import {
-  useStore,
   Commit
 } from "vuex";
+import { useStore } from "./utils";
 import {
   mapArrayToMethods,
   mapObjToMethods,

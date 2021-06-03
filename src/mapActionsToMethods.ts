@@ -1,8 +1,4 @@
 import {
-  ComputedRef
-} from "vue";
-import {
-  useStore,
   Dispatch
 } from "vuex";
 import {
@@ -11,6 +7,7 @@ import {
   MapObjToMethodReturnType,
   MapArrToMethodReturnType
 } from "./mapToComponent";
+import { useStore } from "./utils";
 
 export interface MapActionsToMethods {
   [key : string] : string
