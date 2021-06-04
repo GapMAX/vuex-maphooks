@@ -4,7 +4,8 @@
   "description": "Map hooks for vue3&vuex4",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build" : "tsc",
+    "pub" : "npm run build && npm publish"
   },
   "keywords": [
     "vue3",
