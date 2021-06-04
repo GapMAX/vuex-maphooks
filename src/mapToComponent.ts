@@ -103,7 +103,7 @@ const mapObjToMethods = (options : MapMethodOptions) => (obj : {
   keys.forEach((key) => {
     const value = obj[key];
     const newValue = keyWithNamespace(value, namespace);
-    mapMethods[key] = (payload? : any, param? : MethodOptions<MethodType>) => options.method(value, payload, param);
+    mapMethods[key] = (payload? : any, param? : MethodOptions<MethodType>) => options.method(newValue, payload, param);
   })
   return mapMethods;
 }
