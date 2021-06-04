@@ -1,6 +1,6 @@
 {
   "name": "vuex-maphooks",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Map hooks for vue3&vuex4",
   "main": "./dist/index.js",
   "scripts": {
