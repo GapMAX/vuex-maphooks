@@ -13,8 +13,8 @@ export interface MapMutationsToMethods {
   [key : string] : string
 }
 
-function mapMutationsToMethods(param1 : string, param : MapMutationsToMethods) : MapObjToMethodReturnType<MapMutationsToMethods, Commit>;
-function mapMutationsToMethods(param1 : MapMutationsToMethods) : MapObjToMethodReturnType<MapMutationsToMethods, Commit>;
+function mapMutationsToMethods<T extends MapMutationsToMethods>(param1 : string, param : T) : MapObjToMethodReturnType<T, Commit>;
+function mapMutationsToMethods<T extends MapMutationsToMethods>(param1 : T) : MapObjToMethodReturnType<T, Commit>;
 function mapMutationsToMethods(param1 : string, param : string[]) : MapArrToMethodReturnType<string, Commit>;
 function mapMutationsToMethods(param1 : string[]) : MapArrToMethodReturnType<string, Commit>;
 function mapMutationsToMethods(param1 : any, param? : any){

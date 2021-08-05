@@ -12,7 +12,7 @@ export interface MapGettersToComputed {
   [key : string] : string
 }
 
-function mapGettersToComputed(param1 : string | MapGettersToComputed, param? : MapGettersToComputed) : MapObjToComputedReturnType<MapGettersToComputed>;
+function mapGettersToComputed<T extends MapGettersToComputed>(param1 : T, param? : T) : MapObjToComputedReturnType<T>;
 function mapGettersToComputed(param1 : string | string[], param? : string[]) : {[key : string] : ComputedRef<any>};
 function mapGettersToComputed(param1 : any, param? : any){
   const store = useStore();
